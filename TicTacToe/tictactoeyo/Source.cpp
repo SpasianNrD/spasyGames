@@ -3,16 +3,18 @@
  Copyright @ 2015 Nathan Diaz
  http://spasiannrd.me
  Please let me know if there are any issues
- v.1.0.25
+ v.1.0.27
 
  Changelog:
  -No more "Start Screen" after playing again
  -Cleaner in a sense
+ -Like I said ^
 
  In the future:
  -Let user use any symbol
  -GUI
  -No Spaces needed
+ -Improved error detection
 
 
 */
@@ -25,6 +27,7 @@
 #include <string>
 #include <math.h>
 #include <time.h>
+#include <vector>
 #include <windows.h>
 #include "tictac.h"
 
@@ -168,28 +171,22 @@ int main(){
 	else if (input == "No" || input == "no" || input == "NO" || input == "n" || input == "N" || input == "nO"){
 		system("CLS");
 		cout << "\nOk, cool FINE BE LIKE THAT, BYE! \n\n" << endl;
-		string copy1 = "Sorry my program still has glitches, ill make sure it's is better behaved soon.";
-		string copy2 = "Anyways, thanks. Names Nathan, if your interested in more of this, let me know.";
-		string copy3 = "To add to this, let me know if you find anything wrong.";
-		string copy4 = "Visit me at http://spasiannrd.me or contact me directly using me@spasiannrd.me.";
-		for (int i = 0; i < copy1.length(); i++){
-			cout << copy1.at(i);
-			Sleep(50);
-		}
-		cout << endl;
-		for (int i = 0; i < copy2.length(); i++){
-			cout << copy2.at(i);
-			Sleep(50);
-		}
-		cout << endl;
-		for (int i = 0; i < copy3.length(); i++){
-			cout << copy3.at(i);
-			Sleep(50);
-		}
-		cout << endl;
-		for (int i = 0; i < copy4.length(); i++){
-			cout << copy4.at(i);
-			Sleep(50);
+		Sleep(200);
+
+		vector<string> copy(5);
+
+		copy.at(0) = "Sorry my program still has glitches, ill make sure it's is better behaved soon.";
+		copy.at(1) = "Anyways, thanks. Names Nathan, if your interested in more of this, let me know.";
+		copy.at(2) = "To add to this, let me know if you find anything wrong.";
+		copy.at(3) = "Familuar to GitHub? Create a request, find the link on the site below.";
+		copy.at(4) = "Visit me at http://spasiannrd.me or contact me directly using me@spasiannrd.me.";
+		
+		for (int j = 0; j < copy.size(); j++){
+			for (int i = 0; i < copy.at(j).length(); i++){
+				cout << copy.at(j).at(i);
+				Sleep(50);
+			}
+			cout << endl;
 		}
 		cout << "\n" << endl;
 		system("pause");
